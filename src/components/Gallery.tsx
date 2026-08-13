@@ -1,0 +1,77 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Reveal } from "./Reveal";
+import { Rosette } from "./Rosette";
+
+const tiles = [
+  { pattern: true, span: "sm:row-span-2" },
+  { tone: "bg-ink", fill: "text-salmon" },
+  { tone: "bg-salmon", fill: "text-coral-deep" },
+  { tone: "bg-cream-soft ring-1 ring-ink/10", fill: "text-coral" },
+  { tone: "bg-coral-dark", fill: "text-cream-soft", span: "sm:row-span-2" },
+  { tone: "bg-salmon-soft", fill: "text-coral-dark" },
+];
+
+export function Gallery() {
+  return (
+    <section id="galeria" className="bg-cream-soft py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-coral-dark">
+            Identidade &amp; galeria
+          </span>
+          <h2 className="mt-4 font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl">
+            Cada padrão conta uma história.
+          </h2>
+          <p className="mt-4 text-ink-soft">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit, um
+            recorte da nossa identidade visual e dos trabalhos criados nos
+            ateliês.
+          </p>
+        </Reveal>
+
+        <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:grid-rows-2 sm:gap-6">
+          {tiles.map((t, i) => (
+            <Reveal
+              key={i}
+              delay={0.05 * i}
+              className={`${t.span ?? ""}`}
+            >
+              {t.pattern ? (
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ type: "spring", stiffness: 250, damping: 20 }}
+                  className="h-full min-h-40 overflow-hidden rounded-3xl ring-1 ring-ink/10"
+                  style={{
+                    backgroundImage: "url(/brand/pattern-tile.webp)",
+                    backgroundSize: "260px",
+                    backgroundRepeat: "repeat",
+                  }}
+                />
+              ) : (
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ type: "spring", stiffness: 250, damping: 20 }}
+                  className={`flex h-full min-h-40 items-center justify-center overflow-hidden rounded-3xl ${t.tone}`}
+                >
+                  <motion.div
+                    animate={{ rotate: [0, 8, 0] }}
+                    transition={{
+                      duration: 8 + i,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="w-16 sm:w-24"
+                  >
+                    <Rosette fill="currentColor" className={t.fill} />
+                  </motion.div>
+                </motion.div>
+              )}
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
