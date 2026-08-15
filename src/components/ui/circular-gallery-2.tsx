@@ -447,7 +447,7 @@ class Media {
 class App {
   container: HTMLElement;
   scrollSpeed: number;
-  scroll: { ease: number; current: number; target: number; last: number };
+  scroll: { ease: number; current: number; target: number; last: number; position?: number };
   onCheckDebounce: () => void;
   renderer!: Renderer;
   gl!: OGLRenderingContext;
@@ -461,11 +461,11 @@ class App {
   screen!: { width: number; height: number };
   viewport!: { width: number; height: number };
   raf!: number;
-  boundOnResize: () => void;
-  boundOnWheel: (e: WheelEvent) => void;
-  boundOnTouchDown: (e: MouseEvent | TouchEvent) => void;
-  boundOnTouchMove: (e: MouseEvent | TouchEvent) => void;
-  boundOnTouchUp: () => void;
+  boundOnResize!: () => void;
+  boundOnWheel!: (e: WheelEvent) => void;
+  boundOnTouchDown!: (e: MouseEvent | TouchEvent) => void;
+  boundOnTouchMove!: (e: MouseEvent | TouchEvent) => void;
+  boundOnTouchUp!: () => void;
 
   constructor(
     container: HTMLElement,
@@ -648,7 +648,7 @@ class App {
     this.boundOnTouchUp = this.onTouchUp;
 
     window.addEventListener("resize", this.boundOnResize);
-    window.addEventListener("mousewheel", this.boundOnWheel);
+    window.addEventListener("mousewheel", this.boundOnWheel as EventListener);
     window.addEventListener("wheel", this.boundOnWheel);
     this.container.addEventListener("mousedown", this.boundOnTouchDown);
     window.addEventListener("mousemove", this.boundOnTouchMove);
@@ -661,7 +661,7 @@ class App {
   destroy() {
     window.cancelAnimationFrame(this.raf);
     window.removeEventListener("resize", this.boundOnResize);
-    window.removeEventListener("mousewheel", this.boundOnWheel);
+    window.removeEventListener("mousewheel", this.boundOnWheel as EventListener);
     window.removeEventListener("wheel", this.boundOnWheel);
     this.container.removeEventListener("mousedown", this.boundOnTouchDown);
     window.removeEventListener("mousemove", this.boundOnTouchMove);
