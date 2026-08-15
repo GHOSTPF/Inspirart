@@ -3,15 +3,18 @@ import { Counter } from "./Counter";
 import { Rosette } from "./Rosette";
 
 const stats = [
-  { value: 18, suffix: "", label: "anos de história" },
-  { value: 640, suffix: "+", label: "alunos ativos" },
-  { value: 32, suffix: "", label: "professores e mestres" },
-  { value: 12, suffix: "", label: "ateliês diferentes" },
+  { value: 3, suffix: "", label: "anos de história" },
+  { value: 350, suffix: "+", label: "alunos ativos" },
+  { value: 12, suffix: "", label: "professores e mestres" },
+  { value: 5, suffix: "", label: "ateliês diferentes" },
 ];
 
 export function About() {
   return (
-    <section id="sobre" className="relative overflow-hidden bg-cream-soft py-24 sm:py-32">
+    <section
+      id="sobre"
+      className="relative overflow-hidden bg-cream-soft py-24 sm:py-32"
+    >
       <Rosette
         fill="currentColor"
         className="pointer-events-none absolute -right-24 top-1/2 w-[26rem] -translate-y-1/2 text-salmon-soft/40"
@@ -19,25 +22,48 @@ export function About() {
 
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-16 md:grid-cols-2 md:items-center">
+          
+          {/* TEXTO */}
           <Reveal>
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-coral-dark">
               Sobre a Inspirart
             </span>
+
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-ink sm:text-4xl md:text-5xl">
-              Uma escola construída em volta da imaginação de cada aluno.
+              Uma escola construída pelo amor à arte e pelo propósito de ensinar.
             </h2>
-            <p className="mt-6 text-ink-soft leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco.
-            </p>
-            <p className="mt-4 text-ink-soft leading-relaxed">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt.
-            </p>
+
+            <div className="mt-6 space-y-4 text-ink-soft leading-relaxed">
+              <p>
+                Desde a adolescência, eu já ensinava. Sempre que alguém queria
+                aprender um passo de dança ou algum movimento da ginástica, eu
+                estava ali para ajudar, explicar e incentivar. Naquele momento,
+                eu ainda não sabia, mas já existia uma professora dentro de mim.
+              </p>
+
+              <p>
+                A arte sempre fez parte da nossa história. Eu cresci como
+                bailarina, dançarina e atleta de ginástica rítmica. A Inspirart
+                também nasceu desse mesmo amor pela arte, pela música, pelo
+                movimento e, principalmente, pelo desejo de ensinar.
+              </p>
+
+              <p>
+                Foi dessa paixão que nasceu a Inspirart. Começamos com turmas
+                de ginástica rítmica e música e, pela graça de Deus, fomos
+                crescendo. Hoje, somos uma equipe de professores apaixonados
+                pela arte e pelo ensino, unidos pelo propósito de transformar
+                vidas através do que fazemos.
+              </p>
+
+              <p className="font-medium text-ink">
+                Mais do que uma escola, somos uma equipe, um propósito e uma
+                história que continua sendo escrita através da arte.
+              </p>
+            </div>
           </Reveal>
 
+          {/* ESTATÍSTICAS */}
           <Reveal delay={0.15}>
             <div className="grid grid-cols-2 gap-6 sm:gap-8">
               {stats.map((s, i) => (
@@ -49,11 +75,15 @@ export function About() {
                   <p className="font-display text-4xl font-bold text-coral sm:text-5xl">
                     <Counter to={s.value} suffix={s.suffix} />
                   </p>
-                  <p className="mt-2 text-sm text-ink-soft">{s.label}</p>
+
+                  <p className="mt-2 text-sm text-ink-soft">
+                    {s.label}
+                  </p>
                 </Reveal>
               ))}
             </div>
           </Reveal>
+
         </div>
       </div>
     </section>

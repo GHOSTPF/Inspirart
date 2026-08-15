@@ -16,7 +16,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="pt-BR" className={`${bricolage.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-cream text-ink">
+      <body
+        className="min-h-full flex flex-col bg-cream text-ink"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>

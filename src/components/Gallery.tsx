@@ -1,16 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Reveal } from "./Reveal";
-import { Rosette } from "./Rosette";
+import { CircularGallery } from "./ui/circular-gallery-2";
+import type { GalleryItem } from "./ui/circular-gallery-2";
 
-const tiles = [
-  { pattern: true, span: "sm:row-span-2" },
-  { tone: "bg-ink", fill: "text-salmon" },
-  { tone: "bg-salmon", fill: "text-coral-deep" },
-  { tone: "bg-cream-soft ring-1 ring-ink/10", fill: "text-coral" },
-  { tone: "bg-coral-dark", fill: "text-cream-soft", span: "sm:row-span-2" },
-  { tone: "bg-salmon-soft", fill: "text-coral-dark" },
+// TODO: replace the remaining picsum placeholders with real photos from the ateliês.
+const carouselItems: GalleryItem[] = [
+  { image: "/brand/galeria_image.jpeg", text: "" },
+  { image: "/brand/galeria_image1.jpeg", text: "" },
+  { image: "https://picsum.photos/seed/inspirart-3/800/600", text: "" },
+  { image: "https://picsum.photos/seed/inspirart-4/800/600", text: "" },
+  { image: "https://picsum.photos/seed/inspirart-5/800/600", text: "" },
+  { image: "https://picsum.photos/seed/inspirart-6/800/600", text: "" },
 ];
 
 export function Gallery() {
@@ -71,6 +72,12 @@ export function Gallery() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.15} className="mt-16 sm:mt-20">
+          <div className="relative h-[420px]    ring-ink/10 sm:h-[520px]">
+            <CircularGallery items={carouselItems} bend={2} borderRadius={0.06} />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,18 +1,61 @@
 import Image from "next/image";
 import { Rosette } from "./Rosette";
+import { InstagramIcon, WhatsappIcon } from "./icons/SocialIcons";
+import { whatsappLink } from "@/lib/whatsapp";
 
-const cols = [
+const socials = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/escolainspirart/",
+    icon: InstagramIcon,
+  },
+  {
+    label: "WhatsApp",
+    href: whatsappLink("Olá! Vim pelo site da Inspirart e gostaria de mais informações."),
+    icon: WhatsappIcon,
+  },
+];
+
+const mapsLink =
+  "https://www.google.com/maps/search/?api=1&query=" +
+  encodeURIComponent("Rua das Artes, 123, São Paulo, SP");
+
+type FooterLink = { label: string; href: string; external?: boolean };
+
+const cols: { title: string; links: FooterLink[] }[] = [
   {
     title: "Ateliês",
-    links: ["Pintura", "Cerâmica", "Desenho", "Artes Cênicas", "Música", "Escultura"],
+    links: [
+      { label: "Teatro", href: "#ateliers" },
+      { label: "Dança", href: "#ateliers" },
+      { label: "Ginástica Rítmica", href: "#ateliers" },
+      { label: "Ballet", href: "#ateliers" },
+      { label: "Música", href: "#ateliers" },
+    ],
   },
   {
     title: "Escola",
-    links: ["Sobre", "Galeria", "Depoimentos", "Trabalhe conosco"],
+    links: [
+      { label: "Sobre", href: "#sobre" },
+      { label: "Galeria", href: "#galeria" },
+      { label: "Depoimentos", href: "#depoimentos" },
+      {
+        label: "Trabalhe conosco",
+        href: whatsappLink(
+          "Olá! Gostaria de saber mais sobre oportunidades de trabalho na Inspirart.",
+        ),
+        external: true,
+      },
+    ],
   },
   {
     title: "Contato",
-    links: ["Rua das Artes, 123", "São Paulo, SP", "contato@inspirart.art", "(11) 4002-8922"],
+    links: [
+      { label: "Rua das Artes, 123", href: mapsLink, external: true },
+      { label: "São Paulo, SP", href: mapsLink, external: true },
+      { label: "contato@inspirart.art", href: "mailto:contato@inspirart.art" },
+      { label: "(11) 4002-8922", href: "tel:+551140028922" },
+    ],
   },
 ];
 
@@ -45,6 +88,20 @@ export function Footer() {
             <p className="mt-4 max-w-[22ch] text-sm">
               Um lugar para inspirar, criar e florescer.
             </p>
+            <div className="mt-5 flex items-center gap-3">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-cream-soft/10 text-cream-soft transition-colors hover:bg-cream-soft/20"
+                >
+                  <s.icon className="h-4.5 w-4.5" />
+                </a>
+              ))}
+            </div>
           </div>
 
           {cols.map((c) => (
@@ -54,9 +111,15 @@ export function Footer() {
               </p>
               <ul className="mt-4 space-y-2.5 text-sm">
                 {c.links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="hover:text-cream-soft transition-colors">
-                      {l}
+                  <li key={l.label}>
+                    <a
+                      href={l.href}
+                      {...(l.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      className="hover:text-cream-soft transition-colors"
+                    >
+                      {l.label}
                     </a>
                   </li>
                 ))}

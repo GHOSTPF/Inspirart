@@ -3,19 +3,19 @@ import { Rosette } from "./Rosette";
 
 const quotes = [
   {
-    name: "Marina Alves",
-    role: "mãe de aluna, 8 anos",
-    text: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”",
+    name: "Renata",
+    role: "mãe do Ryan Vinicius",
+    text: "“Obrigada, Prof Matheus, por tanto carinho e dedicação com o Ryan. Ele fica ansioso a cada aula e nunca reclamou porque tem que acordar cedo. Percebi que realmente ele gosta mesmo.”",
   },
   {
-    name: "Theo Ribeiro",
-    role: "aluno, ateliê de música",
-    text: "“Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.”",
+    name: "Márcia Célia",
+    role: "mãe da Camila",
+    text: "“Parabéns a todos os alunos da Inspirart, a apresentação foi linda. Meus parabéns para os professores e toda a equipe.”",
   },
   {
-    name: "Clarice Nunes",
-    role: "mãe de aluno, 11 anos",
-    text: "“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.”",
+    name: "Elly",
+    role: "mãe da Sophia Martins",
+    text: "“Parabéns a todos os profissionais envolvidos, foi tudo muito lindo e emocionante... Amei! Minha Sophia está amando fazer parte dessa equipe, Inspirart.”",
   },
 ];
 

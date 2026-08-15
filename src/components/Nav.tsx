@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { whatsappLink } from "@/lib/whatsapp";
 
 const links = [
   { label: "Sobre", href: "#sobre" },
@@ -44,7 +45,9 @@ export function Nav({ visible }: { visible: boolean }) {
       </nav>
 
       <a
-        href="#contato"
+        href={whatsappLink("Olá! Quero fazer minha matrícula na Inspirart.")}
+        target="_blank"
+        rel="noopener noreferrer"
         className="rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-cream-soft shadow-sm hover:bg-coral-dark transition-colors"
       >
         Matricule-se

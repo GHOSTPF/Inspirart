@@ -6,34 +6,29 @@ import { Rosette } from "./Rosette";
 
 const programs = [
   {
-    title: "Pintura",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+    title: "Teatro",
+    desc: "Expressão, criatividade e confiança para se comunicar e dar vida a diferentes personagens.",
     tone: "bg-coral text-cream-soft",
   },
   {
-    title: "Cerâmica",
-    desc: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+    title: "Dança",
+    desc: "Movimento, ritmo e expressão corporal em aulas que estimulam técnica, criatividade e paixão pela dança.",
     tone: "bg-salmon text-coral-deep",
   },
   {
-    title: "Desenho",
-    desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.",
+    title: "Música",
+    desc: "Descubra o universo da música, desenvolvendo musicalidade, técnica e confiança para se expressar.",
     tone: "bg-ink text-cream-soft",
   },
   {
-    title: "Artes Cênicas",
-    desc: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.",
+    title: "Ginástica Rítmica",
+    desc: "Disciplina, coordenação e expressão através de movimentos que unem esporte, arte e beleza.",
     tone: "bg-salmon-soft text-coral-deep",
   },
   {
-    title: "Música",
-    desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
+    title: "Ballet",
+    desc: "Técnica, leveza e disciplina em uma experiência que transforma movimento em arte.",
     tone: "bg-coral-dark text-cream-soft",
-  },
-  {
-    title: "Escultura",
-    desc: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
-    tone: "bg-cream-soft text-coral-deep border border-ink/10",
   },
 ];
 
@@ -45,8 +40,9 @@ export function Programs() {
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-coral-dark">
             Nossos ateliês
           </span>
+
           <h2 className="mt-4 font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl">
-            Seis caminhos para expressar o que você imagina.
+            Cinco caminhos para expressar o que você imagina.
           </h2>
         </Reveal>
 
@@ -55,22 +51,33 @@ export function Programs() {
             <Reveal key={p.title} delay={0.06 * i}>
               <motion.div
                 whileHover={{ y: -6 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20,
+                }}
                 className="group relative h-full overflow-hidden rounded-3xl bg-cream-soft p-8 shadow-sm ring-1 ring-ink/5"
               >
                 <motion.div
                   className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl p-3 ${p.tone}`}
                   whileHover={{ rotate: 25 }}
-                  transition={{ type: "spring", stiffness: 260, damping: 12 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 12,
+                  }}
                 >
                   <Rosette fill="currentColor" points={8} />
                 </motion.div>
+
                 <h3 className="font-display text-xl font-semibold text-ink">
                   {p.title}
                 </h3>
+
                 <p className="mt-3 text-sm leading-relaxed text-ink-soft">
                   {p.desc}
                 </p>
+
                 <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-coral-dark opacity-0 transition-opacity group-hover:opacity-100">
                   Saiba mais →
                 </span>

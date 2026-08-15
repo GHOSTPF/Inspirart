@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { whatsappLink } from "@/lib/whatsapp";
 
 export function CTA() {
   return (
@@ -31,13 +32,17 @@ export function CTA() {
           </p>
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
             <a
-              href="#"
+              href={whatsappLink("Olá! Gostaria de agendar uma visita para conhecer a Inspirart.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-cream-soft shadow-lg transition-transform hover:-translate-y-0.5"
             >
               Agendar visita
             </a>
             <a
-              href="#"
+              href={whatsappLink("Olá! Vim pelo site da Inspirart e gostaria de mais informações.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full border border-cream-soft/40 px-7 py-3.5 text-sm font-semibold text-cream-soft transition-colors hover:bg-cream-soft/10"
             >
               Falar no WhatsApp

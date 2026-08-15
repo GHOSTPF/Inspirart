@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FloatingRosette } from "./FloatingRosette";
+import { whatsappLink } from "@/lib/whatsapp";
 
 const container = {
   hidden: {},
@@ -68,7 +69,7 @@ export function Hero({ revealed }: { revealed: boolean }) {
           variants={item}
           className="mb-6 rounded-full bg-salmon-soft px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-coral-deep"
         >
-          Matrículas abertas 2027
+          Matrículas abertas 2026
         </motion.span>
 
         <motion.h1
@@ -84,9 +85,9 @@ export function Hero({ revealed }: { revealed: boolean }) {
           variants={item}
           className="mt-6 max-w-xl text-balance text-base text-ink-soft sm:text-lg"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          Ateliês de arte, música e movimento pensados para despertar o
+          potencial criativo de cada criança, em um espaço pensado para
+          acolher, brincar e aprender.
         </motion.p>
 
         <motion.div
@@ -100,7 +101,9 @@ export function Hero({ revealed }: { revealed: boolean }) {
             Conheça os ateliês
           </a>
           <a
-            href="#contato"
+            href={whatsappLink("Olá! Gostaria de agendar uma visita para conhecer a Inspirart.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full border border-ink/15 px-7 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-coral hover:text-coral-dark"
           >
             Agende uma visita
