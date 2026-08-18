@@ -1,12 +1,12 @@
+import Image from "next/image";
 import { Reveal } from "./Reveal";
 import { Counter } from "./Counter";
-import { Rosette } from "./Rosette";
 
 const stats = [
   { value: 3, suffix: "", label: "anos de história" },
   { value: 350, suffix: "+", label: "alunos ativos" },
   { value: 12, suffix: "", label: "professores e mestres" },
-  { value: 5, suffix: "", label: "ateliês diferentes" },
+  { value: 5, suffix: "", label: "escolas diferentes" },
 ];
 
 export function About() {
@@ -15,10 +15,9 @@ export function About() {
       id="sobre"
       className="relative overflow-hidden bg-cream-soft py-24 sm:py-32"
     >
-      <Rosette
-        fill="currentColor"
-        className="pointer-events-none absolute -right-24 top-1/2 w-[26rem] -translate-y-1/2 text-salmon-soft/40"
-      />
+      <div className="pointer-events-none absolute -right-24 top-1/2 aspect-square w-[26rem] -translate-y-1/2 opacity-40">
+        <Image src="/brand/logo_salmao.png" alt="" fill sizes="416px" className="object-contain" />
+      </div>
 
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-16 md:grid-cols-2 md:items-center">

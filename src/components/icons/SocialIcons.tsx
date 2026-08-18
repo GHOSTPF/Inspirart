@@ -13,6 +13,57 @@ export function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
+export function MapPinIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+      aria-hidden="true"
+    >
+      <path
+        d="M12 21.5s7-6.35 7-11.9A7 7 0 0 0 5 9.6c0 5.55 7 11.9 7 11.9Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="9.6" r="2.6" stroke="currentColor" strokeWidth="1.8" />
+    </svg>
+  );
+}
+
+export function MailIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" strokeWidth="1.8" />
+      <path d="m4.5 7 7.5 6 7.5-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function PhoneIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+      aria-hidden="true"
+    >
+      <path
+        d="M6.6 10.8c1.3 2.6 3.4 4.7 6 6l2-2a1.2 1.2 0 0 1 1.2-.3c1.1.36 2.3.55 3.5.55.7 0 1.2.5 1.2 1.2V19.7c0 .7-.5 1.2-1.2 1.2C10.3 20.9 3.1 13.7 3.1 4.7c0-.7.5-1.2 1.2-1.2h3.4c.7 0 1.2.5 1.2 1.2 0 1.2.2 2.4.55 3.5.1.4 0 .9-.3 1.2l-2.05 1.6Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function WhatsappIcon({ className }: { className?: string }) {
   return (
     <svg

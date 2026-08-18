@@ -1,44 +1,49 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Reveal } from "./Reveal";
-import { Rosette } from "./Rosette";
 
 const programs = [
   {
     title: "Teatro",
     desc: "Expressão, criatividade e confiança para se comunicar e dar vida a diferentes personagens.",
     tone: "bg-coral text-cream-soft",
+    logo: "/brand/logo_salmao.png",
   },
   {
     title: "Dança",
     desc: "Movimento, ritmo e expressão corporal em aulas que estimulam técnica, criatividade e paixão pela dança.",
     tone: "bg-salmon text-coral-deep",
+    logo: "/brand/logo_escuro.png",
   },
   {
     title: "Música",
     desc: "Descubra o universo da música, desenvolvendo musicalidade, técnica e confiança para se expressar.",
     tone: "bg-ink text-cream-soft",
+    logo: "/brand/logo_laranja.png",
   },
   {
     title: "Ginástica Rítmica",
     desc: "Disciplina, coordenação e expressão através de movimentos que unem esporte, arte e beleza.",
     tone: "bg-salmon-soft text-coral-deep",
+    logo: "/brand/logo_azul.png",
   },
   {
     title: "Ballet",
     desc: "Técnica, leveza e disciplina em uma experiência que transforma movimento em arte.",
     tone: "bg-coral-dark text-cream-soft",
+    logo: "/brand/logo_salmao.png",
   },
 ];
 
 export function Programs() {
   return (
-    <section id="ateliers" className="relative bg-cream py-24 sm:py-32">
+    <section id="escolas" className="relative bg-cream py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-coral-dark">
-            Nossos ateliês
+            Nossos Programas
           </span>
 
           <h2 className="mt-4 font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl">
@@ -59,7 +64,7 @@ export function Programs() {
                 className="group relative h-full overflow-hidden rounded-3xl bg-cream-soft p-8 shadow-sm ring-1 ring-ink/5"
               >
                 <motion.div
-                  className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl p-3 ${p.tone}`}
+                  className={`relative mb-6 flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl p-2.5 ${p.tone}`}
                   whileHover={{ rotate: 25 }}
                   transition={{
                     type: "spring",
@@ -67,7 +72,13 @@ export function Programs() {
                     damping: 12,
                   }}
                 >
-                  <Rosette fill="currentColor" points={8} />
+                  <Image
+                    src={p.logo}
+                    alt=""
+                    fill
+                    sizes="56px"
+                    className="object-contain p-1"
+                  />
                 </motion.div>
 
                 <h3 className="font-display text-xl font-semibold text-ink">

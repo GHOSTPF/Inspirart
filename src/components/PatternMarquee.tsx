@@ -1,15 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Rosette } from "./Rosette";
-
-const tones = [
-  "text-coral",
-  "text-salmon",
-  "text-ink",
-  "text-coral-dark",
-  "text-salmon-soft",
-];
+import Image from "next/image";
+import { BRAND_LOGOS } from "@/lib/brand";
 
 function Row({ reverse = false }: { reverse?: boolean }) {
   const items = Array.from({ length: 14 });
@@ -20,11 +13,15 @@ function Row({ reverse = false }: { reverse?: boolean }) {
       transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
     >
       {items.map((_, i) => (
-        <Rosette
-          key={i}
-          fill="currentColor"
-          className={`w-10 shrink-0 sm:w-14 ${tones[i % tones.length]}`}
-        />
+        <div key={i} className="relative aspect-square w-10 shrink-0 sm:w-14">
+          <Image
+            src={BRAND_LOGOS[i % BRAND_LOGOS.length]}
+            alt=""
+            fill
+            sizes="56px"
+            className="object-contain"
+          />
+        </div>
       ))}
     </motion.div>
   );

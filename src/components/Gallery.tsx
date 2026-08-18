@@ -1,28 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Reveal } from "./Reveal";
-import { Rosette } from "./Rosette";
 import { CircularGallery } from "./ui/circular-gallery-2";
 import type { GalleryItem } from "./ui/circular-gallery-2";
 
 const tiles = [
   { pattern: true, span: "sm:row-span-2" },
-  { tone: "bg-ink", fill: "text-salmon" },
-  { tone: "bg-salmon", fill: "text-coral-deep" },
-  { tone: "bg-cream-soft ring-1 ring-ink/10", fill: "text-coral" },
-  { tone: "bg-coral-dark", fill: "text-cream-soft", span: "sm:row-span-2" },
-  { tone: "bg-salmon-soft", fill: "text-coral-dark" },
+  { tone: "bg-ink", logo: "/brand/logo_salmao.png" },
+  { tone: "bg-salmon", logo: "/brand/logo_escuro.png" },
+  { tone: "bg-cream-soft ring-1 ring-ink/10", logo: "/brand/logo_azul.png" },
+  { tone: "bg-coral-dark", logo: "/brand/logo_laranja.png", span: "sm:row-span-2" },
+  { tone: "bg-salmon-soft", logo: "/brand/logo_escuro.png" },
 ];
 
-// TODO: replace the remaining picsum placeholders with real photos from the ateliês.
 const carouselItems: GalleryItem[] = [
   { image: "/brand/galeria_image.jpeg", text: "" },
   { image: "/brand/galeria_image1.jpeg", text: "" },
-  { image: "https://picsum.photos/seed/inspirart-3/800/600", text: "" },
-  { image: "https://picsum.photos/seed/inspirart-4/800/600", text: "" },
-  { image: "https://picsum.photos/seed/inspirart-5/800/600", text: "" },
-  { image: "https://picsum.photos/seed/inspirart-6/800/600", text: "" },
+  { image: "/brand/galeria_image2.jpeg", text: "" },
+  { image: "/brand/galeria_image3.jpeg", text: "" },
+  { image: "/brand/galeria_image4.jpeg", text: "" },
+  { image: "/brand/galeria_image5.jpeg", text: "" },
+  { image: "/brand/galeria_image6.jpeg", text: "" },
+  { image: "/brand/galeria_image7.jpeg", text: "" },
+  { image: "/brand/galeria_image8.jpeg", text: "" },
+  { image: "/brand/galeria_image9.jpeg.jpeg", text: "" },
+  { image: "/brand/galeria_image10.jpeg", text: "" },
 ];
 
 export function Gallery() {
@@ -31,19 +35,17 @@ export function Gallery() {
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-coral-dark">
-            Identidade &amp; galeria
+            momentos que inspiram
           </span>
           <h2 className="mt-4 font-display text-3xl font-bold text-ink sm:text-4xl md:text-5xl">
             Cada padrão conta uma história.
           </h2>
           <p className="mt-4 text-ink-soft">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit, um
-            recorte da nossa identidade visual e dos trabalhos criados nos
-            ateliês.
+            Uma coleção de momentos que traduzem a essência da Inspirart: arte, movimento, criatividade e experiências vividas dentro e fora da sala de aula.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:grid-rows-2 sm:gap-6">
+        {/* <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:grid-rows-2 sm:gap-6">
           {tiles.map((t, i) => (
             <Reveal
               key={i}
@@ -74,15 +76,15 @@ export function Gallery() {
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
-                    className="w-16 sm:w-24"
+                    className="relative aspect-square w-16 sm:w-24"
                   >
-                    <Rosette fill="currentColor" className={t.fill} />
+                    <Image src={t.logo ?? ""} alt="" fill sizes="96px" className="object-contain" />
                   </motion.div>
                 </motion.div>
               )}
             </Reveal>
           ))}
-        </div>
+        </div> */}
 
         <Reveal delay={0.15} className="mt-16 sm:mt-20">
           <div className="relative h-[420px]    ring-ink/10 sm:h-[520px]">

@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { Reveal } from "./Reveal";
-import { Rosette } from "./Rosette";
+import { BRAND_LOGOS } from "@/lib/brand";
 
 const quotes = [
   {
@@ -39,7 +40,15 @@ export function Testimonials() {
               delay={0.1 * i}
               className="flex h-full flex-col rounded-3xl bg-cream-soft p-8 shadow-sm ring-1 ring-ink/5"
             >
-              <Rosette fill="currentColor" className="mb-6 w-8 text-salmon" />
+              <div className="relative mb-6 aspect-square w-8">
+                <Image
+                  src={BRAND_LOGOS[i % BRAND_LOGOS.length]}
+                  alt=""
+                  fill
+                  sizes="32px"
+                  className="object-contain"
+                />
+              </div>
               <p className="grow text-ink-soft leading-relaxed">{q.text}</p>
               <div className="mt-6">
                 <p className="font-display font-semibold text-ink">

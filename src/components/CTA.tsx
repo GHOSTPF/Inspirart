@@ -28,7 +28,7 @@ export function CTA() {
           </h2>
           <p className="mt-4 text-cream-soft/85">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Agende
-            uma visita e conheça nossos ateliês de perto.
+            uma visita e conheça nossos programas de perto.
           </p>
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
             <a

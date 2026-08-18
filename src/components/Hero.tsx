@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FloatingRosette } from "./FloatingRosette";
+import { FloatingLogo } from "./FloatingLogo";
 import { whatsappLink } from "@/lib/whatsapp";
 
 const container = {
@@ -26,33 +26,33 @@ export function Hero({ revealed }: { revealed: boolean }) {
       id="top"
       className="relative min-h-screen overflow-hidden pt-28 pb-20 flex items-center bg-cream"
     >
-      {/* decorative rosettes */}
-      <FloatingRosette
-        className="pointer-events-none absolute -left-14 top-24 w-40 text-salmon-soft"
-        fill="currentColor"
+      {/* decorative brand marks */}
+      <FloatingLogo
+        className="pointer-events-none absolute -left-14 top-24 aspect-square w-40"
+        src="/brand/logo_salmao.png"
         duration={9}
         float={14}
         rotate={12}
       />
-      <FloatingRosette
-        className="pointer-events-none absolute right-[6%] top-40 w-24 text-coral/30"
-        fill="currentColor"
+      <FloatingLogo
+        className="pointer-events-none absolute right-[6%] top-40 aspect-square w-24 opacity-30"
+        src="/brand/logo_laranja.png"
         duration={7}
         delay={0.5}
         float={10}
         rotate={-15}
       />
-      <FloatingRosette
-        className="pointer-events-none absolute left-[8%] bottom-10 w-20 text-coral/20"
-        fill="currentColor"
+      <FloatingLogo
+        className="pointer-events-none absolute left-[8%] bottom-10 aspect-square w-20 opacity-20"
+        src="/brand/logo_azul.png"
         duration={11}
         delay={1}
         float={16}
         rotate={18}
       />
-      <FloatingRosette
-        className="pointer-events-none absolute -right-10 bottom-0 w-56 text-salmon-soft/70"
-        fill="currentColor"
+      <FloatingLogo
+        className="pointer-events-none absolute -right-10 bottom-0 aspect-square w-56 opacity-70"
+        src="/brand/logo_escuro.png"
         duration={13}
         delay={0.3}
         float={20}
@@ -76,7 +76,7 @@ export function Hero({ revealed }: { revealed: boolean }) {
           variants={item}
           className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl md:text-7xl"
         >
-          Onde a criatividade
+          Onde a arte inspira, <span className="text-coral">transforma</span>. e
           <br />
           ganha <span className="text-coral">forma</span>.
         </motion.h1>
@@ -85,9 +85,7 @@ export function Hero({ revealed }: { revealed: boolean }) {
           variants={item}
           className="mt-6 max-w-xl text-balance text-base text-ink-soft sm:text-lg"
         >
-          Ateliês de arte, música e movimento pensados para despertar o
-          potencial criativo de cada criança, em um espaço pensado para
-          acolher, brincar e aprender.
+          Na Inspirart, transformamos a arte em experiências de aprendizado, expressão e desenvolvimento. Criamos espaços onde crianças, jovens e adultos podem descobrir novas habilidades, explorar a criatividade e se conectar com diferentes formas de arte.
         </motion.p>
 
         <motion.div
@@ -95,10 +93,10 @@ export function Hero({ revealed }: { revealed: boolean }) {
           className="mt-9 flex flex-col gap-4 sm:flex-row"
         >
           <a
-            href="#ateliers"
+            href="#escolas"
             className="rounded-full bg-coral px-7 py-3.5 text-sm font-semibold text-cream-soft shadow-lg shadow-coral/30 transition-transform hover:-translate-y-0.5 hover:bg-coral-dark"
           >
-            Conheça os ateliês
+            Conheça as escolas
           </a>
           <a
             href={whatsappLink("Olá! Gostaria de agendar uma visita para conhecer a Inspirart.")}

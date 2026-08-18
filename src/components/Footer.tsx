@@ -1,6 +1,11 @@
 import Image from "next/image";
-import { Rosette } from "./Rosette";
-import { InstagramIcon, WhatsappIcon } from "./icons/SocialIcons";
+import {
+  InstagramIcon,
+  MailIcon,
+  MapPinIcon,
+  PhoneIcon,
+  WhatsappIcon,
+} from "./icons/SocialIcons";
 import { whatsappLink } from "@/lib/whatsapp";
 
 const socials = [
@@ -16,21 +21,49 @@ const socials = [
   },
 ];
 
-const mapsLink =
-  "https://www.google.com/maps/search/?api=1&query=" +
-  encodeURIComponent("Rua das Artes, 123, São Paulo, SP");
+type School = { name: string; address: string };
+
+const schools: School[] = [
+  {
+    name: "Unidade Mangabeira",
+    address: "Rua Creusa Campos de Vasconcelos, 69 - Mangabeira",
+  },
+  {
+    name: "Unidade Costa e Silva",
+    address: "Rua Jornalista Professor José Ramalho, 305 - Costa e Silva",
+  },
+  {
+    name: "Unidade Bayeux",
+    address: "R. Santa Luzia, 116 - Brasília, Bayeux - PB, 58307-320",
+  },
+];
+
+function mapsLinkFor(address: string) {
+  return (
+    "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent(`${address}, Paraíba`)
+  );
+}
+
+function mapsEmbedFor(address: string) {
+  return (
+    "https://www.google.com/maps?q=" +
+    encodeURIComponent(`${address}, Paraíba`) +
+    "&output=embed"
+  );
+}
 
 type FooterLink = { label: string; href: string; external?: boolean };
 
 const cols: { title: string; links: FooterLink[] }[] = [
   {
-    title: "Ateliês",
+    title: "Escolas",
     links: [
-      { label: "Teatro", href: "#ateliers" },
-      { label: "Dança", href: "#ateliers" },
-      { label: "Ginástica Rítmica", href: "#ateliers" },
-      { label: "Ballet", href: "#ateliers" },
-      { label: "Música", href: "#ateliers" },
+      { label: "Teatro", href: "#escolas" },
+      { label: "Dança", href: "#escolas" },
+      { label: "Ginástica Rítmica", href: "#escolas" },
+      { label: "Ballet", href: "#escolas" },
+      { label: "Música", href: "#escolas" },
     ],
   },
   {
@@ -48,24 +81,19 @@ const cols: { title: string; links: FooterLink[] }[] = [
       },
     ],
   },
-  {
-    title: "Contato",
-    links: [
-      { label: "Rua das Artes, 123", href: mapsLink, external: true },
-      { label: "São Paulo, SP", href: mapsLink, external: true },
-      { label: "contato@inspirart.art", href: "mailto:contato@inspirart.art" },
-      { label: "(11) 4002-8922", href: "tel:+551140028922" },
-    ],
-  },
+];
+
+const contact = [
+  { label: "Inspirartescolaartistica@gmail.com", href: "mailto:Inspirartescolaartistica@gmail.com", icon: MailIcon },
+  { label: "(83) 99800-7533", href: "tel:+5583998007533", icon: PhoneIcon },
 ];
 
 export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-ink py-16 text-cream-soft/70">
-      <Rosette
-        fill="currentColor"
-        className="pointer-events-none absolute -bottom-20 -right-16 w-72 text-cream-soft/5"
-      />
+      <div className="pointer-events-none absolute -bottom-20 -right-16 aspect-square w-72 opacity-5">
+        <Image src="/brand/logo_salmao.png" alt="" fill sizes="288px" className="object-contain" />
+      </div>
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-4">
           <div>
@@ -126,9 +154,58 @@ export function Footer() {
               </ul>
             </div>
           ))}
+
+          <div>
+            <p className="text-sm font-semibold text-cream-soft">Contato</p>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {contact.map((c) => (
+                <li key={c.label} className="flex items-center gap-2">
+                  <c.icon className="h-4 w-4 shrink-0" />
+                  <a href={c.href} className="hover:text-cream-soft transition-colors">
+                    {c.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-cream-soft/10 pt-8 text-xs sm:flex-row">
+        <div className="mt-14 border-t border-cream-soft/10 pt-10">
+          <p className="text-sm font-semibold text-cream-soft">
+            Nossos Programas
+          </p>
+          <div className="mt-5 grid gap-6 sm:grid-cols-3">
+            {schools.map((school) => (
+              <div key={school.name} className="text-sm">
+                <p className="font-medium text-cream-soft">{school.name}</p>
+                <p className="mt-1.5 flex items-start gap-2">
+                  <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0" />
+                  <span>{school.address}</span>
+                </p>
+                <a
+                  href={mapsLinkFor(school.address)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-block text-xs font-semibold uppercase tracking-wide text-salmon hover:text-cream-soft transition-colors"
+                >
+                  Ver no mapa
+                </a>
+                <div className="mt-3 overflow-hidden rounded-2xl ring-1 ring-cream-soft/10">
+                  <iframe
+                    src={mapsEmbedFor(school.address)}
+                    title={`Mapa - ${school.name}`}
+                    width="100%"
+                    height="160"
+                    loading="lazy"
+                    className="block border-0 grayscale-[15%]"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-cream-soft/10 pt-8 text-xs sm:flex-row">
           <p>© {new Date().getFullYear()} Inspirart. Todos os direitos reservados.</p>
           <p>Identidade visual &amp; site conceitual.</p>
         </div>

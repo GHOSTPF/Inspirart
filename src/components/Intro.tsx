@@ -91,6 +91,7 @@ export function Intro({ onDone }: { onDone: () => void }) {
                 alt=""
                 width={200}
                 height={200}
+                priority
                 className="h-full w-full object-contain drop-shadow-[0_10px_20px_rgba(43,34,29,0.18)]"
               />
             </motion.div>

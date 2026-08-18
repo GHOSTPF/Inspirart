@@ -6,7 +6,7 @@ import { whatsappLink } from "@/lib/whatsapp";
 
 const links = [
   { label: "Sobre", href: "#sobre" },
-  { label: "Ateliês", href: "#ateliers" },
+  { label: "Programas", href: "#escolas" },
   { label: "Galeria", href: "#galeria" },
   { label: "Depoimentos", href: "#depoimentos" },
 ];
