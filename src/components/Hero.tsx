@@ -88,6 +88,13 @@ export function Hero({ revealed }: { revealed: boolean }) {
           Na Inspirart, transformamos a arte em experiências de aprendizado, expressão e desenvolvimento. Criamos espaços onde crianças, jovens e adultos podem descobrir novas habilidades, explorar a criatividade e se conectar com diferentes formas de arte.
         </motion.p>
 
+        <motion.p
+          variants={item}
+          className="mt-4 font-display text-sm italic text-coral-dark sm:text-base"
+        >
+          Inspirar é viver a arte e a arte inspira viver.
+        </motion.p>
+
         <motion.div
           variants={item}
           className="mt-9 flex flex-col gap-4 sm:flex-row"

@@ -113,8 +113,8 @@ export function Footer() {
                 className="h-[18px] w-auto"
               />
             </div>
-            <p className="mt-4 max-w-[22ch] text-sm">
-              Um lugar para inspirar, criar e florescer.
+            <p className="mt-4 max-w-[22ch] text-sm italic">
+              Inspirar é viver a arte e a arte inspira viver.
             </p>
             <div className="mt-5 flex items-center gap-3">
               {socials.map((s) => (

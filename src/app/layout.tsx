@@ -10,7 +10,7 @@ const bricolage = Bricolage_Grotesque({
 
 export const metadata: Metadata = {
   title: "Inspirart | Escola de Arte",
-  description: "Um lugar para inspirar, criar e florescer.",
+  description: "Inspirar é viver a arte e a arte inspira viver.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

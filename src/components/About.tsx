@@ -4,7 +4,7 @@ import { Counter } from "./Counter";
 
 const stats = [
   { value: 3, suffix: "", label: "anos de história" },
-  { value: 350, suffix: "+", label: "alunos ativos" },
+  { value: 350, suffix: "+", label: "inspirados ativos" },
   { value: 12, suffix: "", label: "professores e mestres" },
   { value: 5, suffix: "", label: "escolas diferentes" },
 ];
@@ -43,6 +43,10 @@ export function About() {
 
               <p className="font-medium text-ink">
                 Mais do que uma escola, a Inspirart é um espaço de expressão, aprendizado e transformação, onde a arte inspira, ensina e transforma vidas.
+              </p>
+
+              <p className="font-display italic text-coral-dark">
+                Inspirar é viver a arte e a arte inspira viver — é assim que cada inspirado vive a Inspirart.
               </p>
 
             </div>

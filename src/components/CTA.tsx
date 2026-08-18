@@ -23,8 +23,11 @@ export function CTA() {
 
       <div className="relative z-10 mx-auto max-w-2xl px-6">
         <Reveal>
-          <h2 className="font-display text-3xl font-bold text-cream-soft sm:text-4xl md:text-5xl">
-            Vamos criar juntos?
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-cream-soft/70">
+            Inspirar é viver a arte e a arte inspira viver
+          </span>
+          <h2 className="mt-4 font-display text-3xl font-bold text-cream-soft sm:text-4xl md:text-5xl">
+            Quer ser um inspirado e encontrar sua paixão?
           </h2>
           <p className="mt-4 text-cream-soft/85">
             Conheça a Inspirart, descubra nossas modalidades e encontre o caminho que mais combina com você.
