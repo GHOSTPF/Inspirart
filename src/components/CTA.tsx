@@ -27,8 +27,7 @@ export function CTA() {
             Vamos criar juntos?
           </h2>
           <p className="mt-4 text-cream-soft/85">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Agende
-            uma visita e conheça nossos programas de perto.
+            Conheça a Inspirart, descubra nossas modalidades e encontre o caminho que mais combina com você.
           </p>
           <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
             <a

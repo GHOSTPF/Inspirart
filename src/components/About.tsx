@@ -34,31 +34,17 @@ export function About() {
 
             <div className="mt-6 space-y-4 text-ink-soft leading-relaxed">
               <p>
-                Desde a adolescência, eu já ensinava. Sempre que alguém queria
-                aprender um passo de dança ou algum movimento da ginástica, eu
-                estava ali para ajudar, explicar e incentivar. Naquele momento,
-                eu ainda não sabia, mas já existia uma professora dentro de mim.
+                A Inspirart nasceu da paixão pela arte e pelo desejo de ensinar, criando um espaço onde crianças, jovens e adultos podem desenvolver habilidades, criatividade e confiança por meio da expressão artística.
               </p>
 
               <p>
-                A arte sempre fez parte da nossa história. Eu cresci como
-                bailarina, dançarina e atleta de ginástica rítmica. A Inspirart
-                também nasceu desse mesmo amor pela arte, pela música, pelo
-                movimento e, principalmente, pelo desejo de ensinar.
-              </p>
-
-              <p>
-                Foi dessa paixão que nasceu a Inspirart. Começamos com turmas
-                de ginástica rítmica e música e, pela graça de Deus, fomos
-                crescendo. Hoje, somos uma equipe de professores apaixonados
-                pela arte e pelo ensino, unidos pelo propósito de transformar
-                vidas através do que fazemos.
+                Com uma trajetória ligada à dança, ginástica, música e outras formas de arte, a Inspirart cresceu junto com seus alunos e sua comunidade, transformando aulas em experiências e momentos em histórias.
               </p>
 
               <p className="font-medium text-ink">
-                Mais do que uma escola, somos uma equipe, um propósito e uma
-                história que continua sendo escrita através da arte.
+                Mais do que uma escola, a Inspirart é um espaço de expressão, aprendizado e transformação, onde a arte inspira, ensina e transforma vidas.
               </p>
+
             </div>
           </Reveal>
 
