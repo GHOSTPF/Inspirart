@@ -72,6 +72,7 @@ const cols: { title: string; links: FooterLink[] }[] = [
       { label: "Sobre", href: "#sobre" },
       { label: "Galeria", href: "#galeria" },
       { label: "Depoimentos", href: "#depoimentos" },
+      { label: "Avaliações no Google", href: "#avaliacoes-google" },
       {
         label: "Trabalhe conosco",
         href: whatsappLink(

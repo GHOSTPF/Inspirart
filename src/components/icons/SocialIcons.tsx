@@ -64,6 +64,42 @@ export function PhoneIcon({ className }: { className?: string }) {
   );
 }
 
+export function StarIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M12 2.5 15 9l7.2.6-5.5 4.7 1.7 7-6.4-3.9-6.4 3.9 1.7-7L2 9.6 9.2 9 12 2.5Z" />
+    </svg>
+  );
+}
+
+export function GoogleIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        fill="#4285F4"
+        d="M23.04 12.27c0-.82-.07-1.42-.22-2.05H12.24v3.72h6.19c-.13 1.02-.8 2.56-2.31 3.6l-.02.14 3.35 2.59.23.02c2.13-1.97 3.36-4.87 3.36-8.02Z"
+      />
+      <path
+        fill="#34A853"
+        d="M12.24 23.5c3.04 0 5.6-1 7.46-2.72l-3.56-2.75c-.95.66-2.23 1.13-3.9 1.13-2.98 0-5.5-1.97-6.4-4.68l-.13.01-3.48 2.7-.05.13c1.85 3.68 5.64 6.18 10.06 6.18Z"
+      />
+      <path
+        fill="#FBBC05"
+        d="M5.84 14.48a6.9 6.9 0 0 1-.37-2.23c0-.78.14-1.53.36-2.23l-.01-.15L2.3 7.11l-.11.05a11.5 11.5 0 0 0 0 10.18l3.65-2.86Z"
+      />
+      <path
+        fill="#EA4335"
+        d="M12.24 5.36c2.12 0 3.55.92 4.37 1.68l3.18-3.1C17.83 2.24 15.28 1.15 12.24 1.15c-4.42 0-8.21 2.5-10.06 6.18l3.66 2.85c.9-2.71 3.42-4.82 6.4-4.82Z"
+      />
+    </svg>
+  );
+}
+
 export function WhatsappIcon({ className }: { className?: string }) {
   return (
     <svg

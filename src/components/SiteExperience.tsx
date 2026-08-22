@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Intro } from "./Intro";
 import { Nav } from "./Nav";
 import { Hero } from "./Hero";
@@ -12,7 +12,7 @@ import { Testimonials } from "./Testimonials";
 import { CTA } from "./CTA";
 import { Footer } from "./Footer";
 
-export function SiteExperience() {
+export function SiteExperience({ googleReviews }: { googleReviews: ReactNode }) {
   const [revealed, setRevealed] = useState(false);
 
   return (
@@ -26,6 +26,7 @@ export function SiteExperience() {
         <Programs />
         <Gallery />
         <Testimonials />
+        {googleReviews}
         <CTA />
       </main>
       <Footer />

@@ -53,7 +53,7 @@ export function About() {
           </Reveal>
 
           {/* ESTATÍSTICAS */}
-          <Reveal delay={0.15}>
+          {/* <Reveal delay={0.15}>
             <div className="grid grid-cols-2 gap-6 sm:gap-8">
               {stats.map((s, i) => (
                 <Reveal
@@ -71,7 +71,7 @@ export function About() {
                 </Reveal>
               ))}
             </div>
-          </Reveal>
+          </Reveal> */}
 
         </div>
       </div>
